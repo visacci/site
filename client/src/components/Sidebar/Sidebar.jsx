@@ -4,7 +4,7 @@ import "./Sidebar.css";
 import { Link } from "react-router-dom";
 const Sidebar = ({ onToggle }) => {
   const [isOpen, setIsOpen] = useState(false);
-  // import img from "../../../images/1.jpg";
+  // import img from "../../../public/1.jpg";
   const toggleSidebar = () => {
     const newState = !isOpen;
     setIsOpen(newState);
@@ -29,6 +29,9 @@ const Sidebar = ({ onToggle }) => {
           </li>
           <li>
             <Link to="/contact">Contact</Link>
+          </li>
+          <li>
+            <Link to="/resume">Resume</Link>
           </li>
         </ul>
       </div>

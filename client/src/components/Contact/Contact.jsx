@@ -3,7 +3,7 @@ import "./Contact.css";
 import axios from "axios";
 const ContactForm = () => {
   const [firstname, setFirstname] = useState("");
-  const url = "http://localhost:8000/api/send-email";
+  const url = "https://site-backend-ndps.onrender.com/api/send-email";
   const [secondname, setSecondname] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");

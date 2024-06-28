@@ -5,8 +5,8 @@ import axios from "axios";
 const Home = () => {
   const [comment, setComment] = useState("");
   const [coms, setComs] = useState([]);
-  const url = "http://localhost:8000/api/comments/send";
-  const url2 = "http://localhost:8000/api/comments";
+  const url = "https://site-backend-ndps.onrender.com/api/comments/send";
+  const url2 = "https://site-backend-ndps.onrender.com/api/comments";
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
