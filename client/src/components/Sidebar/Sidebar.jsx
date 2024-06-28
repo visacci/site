@@ -4,7 +4,7 @@ import "./Sidebar.css";
 import { Link } from "react-router-dom";
 const Sidebar = ({ onToggle }) => {
   const [isOpen, setIsOpen] = useState(false);
-  // import img from "../../../images/1.jpg";
+  // import img from "../../../public/1.jpg";
   const toggleSidebar = () => {
     const newState = !isOpen;
     setIsOpen(newState);
@@ -16,7 +16,7 @@ const Sidebar = ({ onToggle }) => {
         {isOpen ? "Close" : "Menu"}
       </button>
       <div className={`sidebar ${isOpen ? "open" : ""}`}>
-        <img src="../../../images/1.jpg" alt="" className="profile" />
+        <img src="../../../public/1.jpg" alt="" className="profile" />
         <ul>
           <li>
             <Link to={"/"}>Home</Link>
