@@ -16,7 +16,7 @@ const Sidebar = ({ onToggle }) => {
         {isOpen ? "Close" : "Menu"}
       </button>
       <div className={`sidebar ${isOpen ? "open" : ""}`}>
-        <img src="../../../images/1.jpg" alt="" className="profile" />
+        <img src="../../../public/1.jpg" alt="" className="profile" />
         <ul>
           <li>
             <Link to={"/"}>Home</Link>

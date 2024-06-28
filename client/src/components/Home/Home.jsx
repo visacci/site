@@ -85,7 +85,7 @@ const Home = () => {
           </p>
         </div>
         <div className="right">
-          <img src="../../../images/1.jpg" alt="" className="img" />
+          <img src="../../../public/1.jpg" alt="" className="img" />
           <div className="comments">
             <form className="in" onSubmit={handleSubmit}>
               <input
