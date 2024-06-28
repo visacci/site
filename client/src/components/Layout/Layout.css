@@ -1,0 +1,15 @@
+/* src/Layout.css */
+.layout {
+  display: flex;
+  transition: margin-left 0.3s ease;
+}
+
+.layout-sidebar-open .layout-content {
+  margin-left: 250px; /* Same width as the sidebar */
+}
+
+.layout-content {
+  flex-grow: 1;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
