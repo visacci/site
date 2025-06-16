@@ -260,39 +260,33 @@ const Home = () => {
 
   const projects = [
     {
-      name: "E-commerce Platform",
-      description:
-        "A full-stack e-commerce application with user authentication, product catalog, shopping cart, and order management.",
-      link: "https://your-ecommerce-project.com",
-      image:
-        "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      name: "Dashboard",
+      description: "A frontend dashboard for user management",
+      link: "https://dashboardnew-4abr.onrender.com/",
+      image: "/images/img2.png",
       tech: ["React", "Node.js", "MongoDB", "Redux"],
     },
     {
       name: "Social Media Dashboard",
       description:
-        "A dashboard for managing social media posts, scheduling, and analytics, integrated with various social platforms.",
-      link: "https://your-social-media-project.com",
-      image:
-        "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      tech: ["Next.js", "TypeScript", "GraphQL", "Tailwind CSS"],
+        "A full Stack social media app with all the fullstack operations",
+      link: "https://hireme.site",
+      image: "/images/img3.png",
+      tech: ["Next.js", "TypeScript", "GraphQL", "Material UI"],
     },
     {
-      name: "Task Management App",
-      description:
-        "A collaborative task management application with real-time updates and user roles.",
-      link: "https://your-task-management-project.com",
-      image:
-        "https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      name: "Dermatology Clinic Website",
+      description: "A dermatology lead generation and seo optimise website",
+      link: "https://www.manchesterdermatologyclinic.co.uk/",
+      image: "/images/img5.png",
       tech: ["React", "Firebase", "Material-UI", "React DnD"],
     },
     {
       name: "Real-time Chat Application",
       description:
         "A real-time chat application built with WebSockets, supporting private and group chats.",
-      link: "https://your-chat-app-project.com",
-      image:
-        "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      link: "https://modern-chat-app-me.onrender.com/",
+      image: "/images/img4.png",
       tech: ["Socket.io", "Node.js", "React", "MongoDB"],
     },
   ];
