@@ -41,6 +41,7 @@ import {
   ListItemButton,
   ListItemText,
   ListItemIcon,
+  Link,
 } from "@mui/material";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
@@ -199,12 +200,36 @@ const ScrollToTop = (props) => {
   );
 };
 
+// ModeToggle Component - Moved to be defined before Home
+const ModeToggle = () => {
+  const colorMode = useContext(ColorModeContext);
+  const theme = useTheme();
+
+  return (
+    <motion.div whileHover={{ scale: 1.1 }}>
+      <IconButton
+        sx={{ ml: 1 }}
+        onClick={colorMode.toggleColorMode}
+        color="inherit"
+      >
+        {theme.palette.mode === "dark" ? (
+          <Brightness7Icon />
+        ) : (
+          <Brightness4Icon />
+        )}
+      </IconButton>
+    </motion.div>
+  );
+};
+
 const Home = () => {
   const [comment, setComment] = useState("");
   const [coms, setComs] = useState([]);
   const [mobileOpen, setMobileOpen] = useState(false);
   const url = "https://site-backend-ndps.onrender.com/api/comments/send";
   const url2 = "https://site-backend-ndps.onrender.com/api/comments";
+
+  const theme = useTheme();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -793,29 +818,156 @@ const Home = () => {
           <KeyboardArrowUpIcon />
         </Fab>
       </ScrollToTop>
-    </Box>
-  );
-};
 
-// ModeToggle Component
-const ModeToggle = () => {
-  const colorMode = useContext(ColorModeContext);
-  const theme = useTheme();
-
-  return (
-    <motion.div whileHover={{ scale: 1.1 }}>
-      <IconButton
-        sx={{ ml: 1 }}
-        onClick={colorMode.toggleColorMode}
-        color="inherit"
+      {/* Footer Section */}
+      <Section
+        sx={{
+          bgcolor:
+            theme.palette.mode === "dark"
+              ? theme.palette.common.black
+              : "primary.dark",
+          color:
+            theme.palette.mode === "dark"
+              ? theme.palette.common.white
+              : "primary.contrastText",
+          py: 8,
+          textAlign: "center",
+        }}
       >
-        {theme.palette.mode === "dark" ? (
-          <Brightness7Icon />
-        ) : (
-          <Brightness4Icon />
-        )}
-      </IconButton>
-    </motion.div>
+        <Container maxWidth="lg">
+          <Grid
+            container
+            spacing={4}
+            justifyContent="space-around"
+            alignItems="flex-start"
+          >
+            {/* Section 1: Brand/Introduction */}
+            <Grid item xs={12} md={4}>
+              <Typography
+                variant="h6"
+                component="div"
+                gutterBottom
+                sx={{
+                  color:
+                    theme.palette.mode === "dark"
+                      ? theme.palette.secondary.main
+                      : "inherit",
+                }}
+              >
+                Katende Ibrahim
+              </Typography>
+              <Typography
+                variant="body2"
+                sx={{ mb: 2, maxWidth: 300, mx: "auto" }}
+              >
+                Building robust and dynamic web applications with a passion for
+                excellence and innovation.
+              </Typography>
+              <Typography variant="body2">
+                &copy; {new Date().getFullYear()} Katende Ibrahim. All rights
+                reserved.
+              </Typography>
+            </Grid>
+
+            {/* Section 2: Quick Links */}
+            <Grid item xs={12} md={3}>
+              <Typography variant="h6" component="div" gutterBottom>
+                Quick Links
+              </Typography>
+              <Stack
+                spacing={1}
+                alignItems={{ xs: "center", md: "flex-start" }}
+              >
+                {navItems.map((item) => (
+                  <Link
+                    key={item.id}
+                    href={`#${item.id}`}
+                    color="inherit"
+                    underline="hover"
+                    variant="body2"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </Stack>
+            </Grid>
+
+            {/* Section 3: Contact & Connect */}
+            <Grid item xs={12} md={5}>
+              <Typography variant="h6" component="div" gutterBottom>
+                Get in Touch
+              </Typography>
+              <Stack
+                spacing={1}
+                alignItems={{ xs: "center", md: "flex-start" }}
+                sx={{ mb: 2 }}
+              >
+                <Typography variant="body2">
+                  <strong>Email:</strong> visacciallanz14@gmail.com
+                </Typography>
+                <Typography variant="body2">
+                  <strong>Phone:</strong> +256748497050
+                </Typography>
+                <Typography variant="body2">
+                  <strong>Location:</strong> Kampala, Uganda
+                </Typography>
+              </Stack>
+              <Typography variant="body2" gutterBottom>
+                Connect With Me:
+              </Typography>
+              <Stack
+                direction="row"
+                spacing={1}
+                justifyContent={{ xs: "center", md: "flex-start" }}
+              >
+                <motion.div whileHover={{ scale: 1.2 }}>
+                  <IconButton
+                    color="inherit"
+                    href="https://linkedin.com/in/yourprofile"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                  >
+                    <i
+                      className="fab fa-linkedin-in"
+                      style={{ fontSize: "1.2rem" }}
+                    />
+                  </IconButton>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.2 }}>
+                  <IconButton
+                    color="inherit"
+                    href="https://github.com/yourprofile"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub"
+                  >
+                    <i
+                      className="fab fa-github"
+                      style={{ fontSize: "1.2rem" }}
+                    />
+                  </IconButton>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.2 }}>
+                  <IconButton
+                    color="inherit"
+                    href="https://twitter.com/yourprofile"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Twitter"
+                  >
+                    <i
+                      className="fab fa-twitter"
+                      style={{ fontSize: "1.2rem" }}
+                    />
+                  </IconButton>
+                </motion.div>
+              </Stack>
+            </Grid>
+          </Grid>
+        </Container>
+      </Section>
+    </Box>
   );
 };
 
