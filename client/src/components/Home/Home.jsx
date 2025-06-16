@@ -677,10 +677,10 @@ const Home = () => {
                   </Typography>
                   <Stack spacing={2}>
                     <Typography variant="body1">
-                      <strong>Email:</strong> your.email@example.com
+                      <strong>Email:</strong> visacciallanz14@gmail.com
                     </Typography>
                     <Typography variant="body1">
-                      <strong>Phone:</strong> +1 (123) 456-7890
+                      <strong>Phone:</strong> +256748497050
                     </Typography>
                     <Typography variant="body1">
                       <strong>Location:</strong> Kampala, Uganda
