@@ -50,6 +50,7 @@ import InfoIcon from "@mui/icons-material/Info";
 import CodeIcon from "@mui/icons-material/Code";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
+import ApiIcon from "@mui/icons-material/Api";
 import { styled } from "@mui/system";
 import { keyframes } from "@emotion/react";
 import { motion } from "framer-motion";
@@ -68,7 +69,11 @@ const pulseAnimation = keyframes`
 `;
 
 // Create a context for the theme mode
-const ColorModeContext = createContext({ toggleColorMode: () => {} });
+const ColorModeContext = createContext({
+  toggleColorMode: () => {
+    console.log("hello");
+  },
+});
 
 // Styled components with animations
 const HeroSection = styled(Box)(({ theme }) => ({
@@ -78,23 +83,31 @@ const HeroSection = styled(Box)(({ theme }) => ({
   justifyContent: "center",
   textAlign: "center",
   color: theme.palette.text.primary,
-  background:
-    theme.palette.mode === "dark"
-      ? `linear-gradient(135deg, ${theme.palette.grey[900]} 0%, ${theme.palette.grey[800]} 100%)`
-      : `linear-gradient(135deg, ${theme.palette.primary.light} 0%, ${theme.palette.primary.main} 100%)`,
-  padding: theme.spacing(8, 0),
+  backgroundImage:
+    "url(https://images.unsplash.com/photo-1510519138101-570d1dca3d66?q=80&w=2062&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)", // Placeholder abstract tech image
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
   position: "relative",
   overflow: "hidden",
   "&:before": {
+    // Overlay for text readability
     content: '""',
     position: "absolute",
     top: 0,
     left: 0,
     right: 0,
     bottom: 0,
-    background: "url(/noise.png)",
-    opacity: 0.03,
-    pointerEvents: "none",
+    background:
+      theme.palette.mode === "dark"
+        ? "rgba(0, 0, 0, 0.6)"
+        : "rgba(255, 255, 255, 0.4)",
+    zIndex: 1,
+  },
+  "& > *": {
+    // Ensure content is above the overlay
+    zIndex: 2,
+    position: "relative",
   },
   [theme.breakpoints.down("md")]: {
     minHeight: "90vh",
@@ -255,7 +268,11 @@ const Home = () => {
     { name: "HTML", icon: <i className="devicon-html5-plain colored" /> },
     { name: "CSS", icon: <i className="devicon-css3-plain colored" /> },
     { name: "Git", icon: <i className="devicon-git-plain colored" /> },
-    { name: "RESTful APIs", icon: <i className="devicon-api-plain colored" /> },
+    { name: "RESTful APIs", icon: <ApiIcon /> },
+    {
+      name: "WordPress",
+      icon: <i className="devicon-wordpress-plain colored" />,
+    },
   ];
 
   const projects = [
